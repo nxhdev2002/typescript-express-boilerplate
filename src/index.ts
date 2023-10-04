@@ -1,4 +1,7 @@
+/* eslint-disable import/first */
 import { configDotenv } from 'dotenv'
+configDotenv()
+
 import app from '@/app'
 import sequelize from '@/utils/dbConn'
 
@@ -6,8 +9,6 @@ process.on('uncaughtException', (err) => {
   console.log(`Error: ${err.stack}`)
   process.exit(1)
 })
-
-configDotenv()
 
 sequelize.authenticate().then(() => {
   app.listen(process.env.PORT, () => {
