@@ -1,2 +1,5 @@
 dist/
+models/
+migrations/
+seeders/
 .eslintrc.js

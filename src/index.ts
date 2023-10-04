@@ -1,5 +1,6 @@
 import { configDotenv } from 'dotenv'
 import app from '@/app'
+import sequelize from '@/utils/dbConn'
 
 process.on('uncaughtException', (err) => {
   console.log(`Error: ${err.stack}`)
@@ -8,15 +9,12 @@ process.on('uncaughtException', (err) => {
 
 configDotenv()
 
-const server = app.listen(process.env.PORT, () => {
-  console.log(
-    `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode`
-  )
-})
-
-process.on('unhandledRejection', (err: Error) => {
-  console.log(`ERROR: ${err.message}`)
-  server.close(() => {
-    process.exit(1)
+sequelize.authenticate().then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(
+      `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode`
+    )
   })
+}).catch((err) => {
+  console.log(err)
 })
