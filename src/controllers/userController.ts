@@ -11,6 +11,6 @@ export const getUsers = catchAsyncError(async (req: GetUserAuthInfoRequest, res:
     message: 'Fetched users successfully',
     data: users
   }
-
+  console.log(users[0].getJwtToken())
   res.send(resp)
 })
