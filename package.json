@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=DEVELOPMENT ts-node -r tsconfig-paths/register src/index.ts",
     "prod": "cross-env NODE_ENV=PRODUCTION ts-node -r tsconfig-paths/register src/index.ts",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix"
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prepare": "husky install"
   },
   "author": "nxhdev2002",
   "license": "ISC",
@@ -28,7 +29,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
