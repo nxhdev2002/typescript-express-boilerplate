@@ -35,18 +35,15 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 cd Typescript-Express-Sequelize-boilerplate
 yarn
-yarn run dev
+yarn dev
 ```
 
 For production environments...
 
 ```sh
 cd Typescript-Express-Sequelize-boilerplate
-```
-
-```sh
 yarn
-yarn run prod
+yarn prod
 ```
 
 ## License
