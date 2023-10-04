@@ -1,9 +1,10 @@
 import catchAsyncError from '@/middlewares/catchAsyncError'
 import User from '@/models/User'
+import { type GetUserAuthInfoRequest } from '@/types/GetUserAuthInfoRequest'
 import { type HttpResponse } from '@/types/HttpResponse'
-import { type Request, type Response } from 'express'
+import { type Response } from 'express'
 
-export const getUsers = catchAsyncError(async (req: Request, res: Response): Promise<void> => {
+export const getUsers = catchAsyncError(async (req: GetUserAuthInfoRequest, res: Response): Promise<void> => {
   const users = await User.findAll()
   const resp: HttpResponse<User[]> = {
     status: 200,
